@@ -12,14 +12,10 @@ char pppd_version[] = PPPOE_VER;
 //static char saveuser[MAXNAMELEN] = {0};
 //static char savepwd[MAXSECRETLEN] = {0};
 
-void print_hex __P(( unsigned char *, uint8_t,  printer_func, void *));
-void print_hex_to_file __P(( unsigned char *, uint8_t,  printer_func, FILE *));
+void print_hex(unsigned char *, uint8_t, printer_func, void *);
+void print_hex_to_file(unsigned char *, uint8_t, printer_func, FILE *);
 
-void print_hex (p, len, printer, arg)
-    unsigned char *p;
-    uint8_t len;
-    printer_func printer;
-    void *arg;
+void print_hex(unsigned char *p, uint8_t len, printer_func printer, void *arg)
 {
 	uint8_t c;
 	printer(arg, "0x%02x ", len);
